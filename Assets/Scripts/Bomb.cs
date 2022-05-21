@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Bomb : MonoBehaviour
 {
-    //[SerializeField] 
-    private float speed = 13;
+    [SerializeField] private float speed;
     [SerializeField] private float howMuchLifetime = 3;
     private bool hit;
     private float direction;
     private float lifetime;
 
     private BoxCollider2D boxCollider;
+    private Rigidbody2D body;
     private Animator anim;
 
     private void Awake()
@@ -18,11 +18,17 @@ public class Projectile : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        float movementSpeed = -1 * speed * Time.deltaTime * direction;
+        //body.velocity = new Vector2(movementSpeed, 12);
+    }
+
     private void Update()
     {
         if (hit) return;
-        float movementSpeed = 1 * speed * Time.deltaTime * direction;
-        transform.Translate(movementSpeed, 0, 0);
+        
+        //body.velocity = new Vector2(body.velocity.x, body.velocity.y);
 
         lifetime += Time.deltaTime;
         if (lifetime > howMuchLifetime)
@@ -48,8 +54,6 @@ public class Projectile : MonoBehaviour
         boxCollider.enabled = true;
 
         float localScaleX = transform.localScale.x;
-
-
         if (Mathf.Sign(localScaleX) != _direction)
         {
             localScaleX = -localScaleX;
