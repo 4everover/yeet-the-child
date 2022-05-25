@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    [SerializeField] GameObject[] characters;
+    [SerializeField] GameObject[] p1Characters;
+    [SerializeField] GameObject[] p2Characters;
     [SerializeField] GameObject[] spawnpoints;
     static GameObject player1Selection;
     static GameObject player2Selection;
@@ -21,10 +22,16 @@ public class CharacterSelect : MonoBehaviour
     {
         if (currentScene.name == "Fatality!")
         {
-            if (player1Selection) { GameObject p1 = Instantiate(player1Selection, spawnpoints[0].transform); }
-            //p1.GetComponent<PlayerMovement>().SetPlayerNum(1);
-            if (player2Selection) { GameObject p2 = Instantiate(player2Selection, spawnpoints[1].transform); }
-            //p2.GetComponent<PlayerMovement>().SetPlayerNum(2);
+            if (player1Selection) 
+            { 
+                GameObject p1 = Instantiate(player1Selection, spawnpoints[0].transform);
+                p1.GetComponent<PlayerMovement>().SetPlayerNum(1); 
+            }
+            if (player2Selection) 
+            { 
+                GameObject p2 = Instantiate(player2Selection, spawnpoints[1].transform); 
+                p2.GetComponent<PlayerMovement>().SetPlayerNum(2);
+            }
         }
     }
 
@@ -36,14 +43,14 @@ public class CharacterSelect : MonoBehaviour
 
     public void Player1Selection(int index)
     {
-        player1Selection = characters[index];
-        player1Selection.GetComponent<PlayerMovement>().SetPlayerNum(1);
+        player1Selection = p1Characters[index];
+        //player1Selection.GetComponent<PlayerMovement>().SetPlayerNum(1);
         Debug.Log("player 1 selected " + player1Selection.name);
     }
     public void Player2Selection(int index)
     {
-        player2Selection = characters[index];
-        player2Selection.GetComponent<PlayerMovement>().SetPlayerNum(2);
+        player2Selection = p2Characters[index];
+        //player2Selection.GetComponent<PlayerMovement>().SetPlayerNum(2);
         Debug.Log("player 2 selected " + player2Selection.name);
     }
 

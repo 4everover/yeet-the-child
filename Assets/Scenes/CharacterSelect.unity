@@ -1221,9 +1221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99af1564b53db6a459f22c1ce219bfdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
+  p1Characters:
   - {fileID: 7122729611101952950, guid: caa4e1bd85579bb4eb20a6c869f0483a, type: 3}
   - {fileID: 27862674238962948, guid: 06ad3ae76dda066419c79b622eff67a4, type: 3}
+  p2Characters:
+  - {fileID: 7122729611101952950, guid: caa4e1bd85579bb4eb20a6c869f0483a, type: 3}
+  - {fileID: 27862674238962948, guid: 06ad3ae76dda066419c79b622eff67a4, type: 3}
+  spawnpoints: []
 --- !u!4 &1487045433
 Transform:
   m_ObjectHideFlags: 0

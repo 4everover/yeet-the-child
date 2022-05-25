@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e16bb1edc8c41478d874349948e2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown1: 0.7
+  attackCooldown1: 0.75
   attackCooldown2: 1.5
   attackPos: {fileID: 27862673666262312}
   area: {fileID: 27862673063918310}
@@ -476,7 +476,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 15
-  jumppower: 13
+  jumppower: 10
   playerNum: 1
 --- !u!114 &27862674238962958
 MonoBehaviour:

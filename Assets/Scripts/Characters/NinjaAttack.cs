@@ -25,9 +25,13 @@ public class NinjaAttack : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
-        playerNum = GetComponent<PlayerMovement>().GetPlayerNum();
         //boxCollider = GetComponent<BoxCollider2D>();
         //body = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        playerNum = GetComponent<PlayerMovement>().GetPlayerNum();
     }
 
     void Update()

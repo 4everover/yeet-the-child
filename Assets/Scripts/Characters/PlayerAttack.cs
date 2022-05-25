@@ -17,7 +17,6 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
-        playerNum = playerMovement.GetPlayerNum();
 
         cooldownTimer1 = Mathf.Infinity;
         cooldownTimer2 = Mathf.Infinity;
@@ -26,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerNum = playerMovement.GetPlayerNum();
     }
 
     // Update is called once per frame
