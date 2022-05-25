@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float howMuchLifetime;
 
+    [SerializeField] private bool isDroppable;
     [SerializeField] private bool isThrowable;
     [Header("Only if throwable (\"Speed\" will be x vel):")]
     [SerializeField] private float throwingYVelocity;
@@ -34,6 +35,10 @@ public class Projectile : MonoBehaviour
         {
             body.velocity = new Vector2(direction * speed, throwingYVelocity);
         }
+        else if (isDroppable)
+        {
+
+        }
     }
 
     private void Update()
@@ -51,7 +56,7 @@ public class Projectile : MonoBehaviour
 
         float movementSpeed = direction * speed;
 
-        if (!isThrowable) { body.velocity = new Vector2(movementSpeed, 0); }
+        if (!isThrowable && !isDroppable) { body.velocity = new Vector2(movementSpeed, 0); }
         //else { body.velocity = new Vector2(movementSpeed, body.velocity.y); }
 
         //transform.Translate(movementSpeed, 0, 0);
@@ -73,6 +78,9 @@ public class Projectile : MonoBehaviour
     }
 
     public void SetSummoner(GameObject gO) { summoner = gO; }
+
+    public GameObject GetSummoner() { return summoner; }
+
     public void SetDirection(float _direction)
     {
         direction = _direction;
