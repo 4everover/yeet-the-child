@@ -1,5 +1,5 @@
-//using System.Collections;
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DogePoint : MonoBehaviour
@@ -9,9 +9,9 @@ public class DogePoint : MonoBehaviour
     private GameObject opposingPlayer;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        /*players = FindObjectsOfType<playerMovement>();
+        players = FindObjectsOfType<PlayerMovement>();
         foreach (PlayerMovement p in players)
         {
             if (p.gameObject != GetComponentInParent<PlayerMovement>().gameObject)
@@ -19,7 +19,7 @@ public class DogePoint : MonoBehaviour
                 opposingPlayer = p.gameObject;
                 break;
             }
-        }*/
+        }
     }
 
     // Update is called once per frame

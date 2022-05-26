@@ -35,10 +35,6 @@ public class Projectile : MonoBehaviour
         {
             body.velocity = new Vector2(direction * speed, throwingYVelocity);
         }
-        else if (isDroppable)
-        {
-
-        }
     }
 
     private void Update()
@@ -46,21 +42,15 @@ public class Projectile : MonoBehaviour
         if (hit) 
         {
             Destroy(gameObject);
-            //gameObject.SetActive(false); 
         }
         if (lifetime > howMuchLifetime)
         {
             Destroy(gameObject);
-            //gameObject.SetActive(false);
         }
 
         float movementSpeed = direction * speed;
 
         if (!isThrowable && !isDroppable) { body.velocity = new Vector2(movementSpeed, 0); }
-        //else { body.velocity = new Vector2(movementSpeed, body.velocity.y); }
-
-        //transform.Translate(movementSpeed, 0, 0);
-
         lifetime += Time.deltaTime;
     }
 
@@ -69,12 +59,9 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject == summoner) { return; }
         else if (collision.GetComponent<Health>()) 
         {
-            //Debug.Log(collision.name + " has health");
             collision.GetComponent<Health>().TakeDamage(damageToDeal);
         }
         hit = true;
-        //boxCollider.enabled = false;
-        //anim.SetTrigger("Explode");
     }
 
     public void SetSummoner(GameObject gO) { summoner = gO; }
@@ -86,26 +73,5 @@ public class Projectile : MonoBehaviour
         direction = _direction;
         transform.localScale = new Vector3(direction*transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
-        /*lifetime = 0;
-        direction = _direction;
-        gameObject.SetActive(true);
-        hit = false;
-        boxCollider.enabled = true;
-
-        float localScaleX = transform.localScale.x;
-
-
-        if (Mathf.Sign(localScaleX) != _direction)
-        {
-            localScaleX = -localScaleX;
-        }
-
-        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);*/
-
     }
-
-    /*private void Deactivate()
-    {
-        gameObject.SetActive(false);
-    }*/
 }

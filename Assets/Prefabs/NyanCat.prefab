@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9213f9e68de41e1418fda53d38d00b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDeal: 6.5
+  damageToDeal: 4
   speed: 7
   howMuchLifetime: 8
   isDroppable: 0

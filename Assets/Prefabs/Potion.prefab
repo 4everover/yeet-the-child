@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4999476118608953081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7707934, y: -0.84958684, z: -0.16332784}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -149,5 +149,6 @@ MonoBehaviour:
   damageToDeal: 5
   speed: 10
   howMuchLifetime: 3
+  isDroppable: 0
   isThrowable: 1
   throwingYVelocity: 17

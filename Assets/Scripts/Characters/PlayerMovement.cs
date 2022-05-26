@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
-    //private Animator anim;
     private BoxCollider2D boxCollider; 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float speed;
@@ -16,8 +15,11 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        //anim = GetComponent<Animator>();
         sizeScale = Mathf.Abs(transform.localScale.x);
+    }
+
+    private void Start()
+    {
         if (playerNum == 2) { transform.localScale = new Vector3(-sizeScale, sizeScale, sizeScale); }
     }
 
@@ -50,11 +52,6 @@ public class PlayerMovement : MonoBehaviour
     {
         body.velocity = new Vector2(body.velocity.x, jumppower);
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-        
-    //}
     
     private bool isGrounded()
     {
